@@ -7,13 +7,13 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="index.php">Start Bootstrap</a>
+        <a class="navbar-brand" href="index.php">Hepisiburada</a>
     </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
             <li>
-                <a href="#">Shop</a>
+                <a href="shop.php">Shop</a>
             </li>
             <li>
                 <a href="login.php">Login</a>
@@ -22,14 +22,27 @@
                 <a href="admin">Admin</a>
             </li>
              <li>
-                <a href="checkout.html">Checkout</a>
+                <a href="checkout.php">Checkout</a>
             </li>
             <li>
-                <a href="contact.html">Contact</a>
+                <a href="contact.php">Contact</a>
             </li>
 
         </ul>
+        <form class="navbar-form" role="search" align="right">
+					<div class="input-group" >
+						<input type="text" class="form-control" placeholder="Search...">
+						<span class="input-group-btn">
+							<button type="submit" class="btn btn-default">
+								<span class="glyphicon glyphicon-search">
+									<span class="sr-only">Search...</span>
+								</span>
+							</button>
+						</span>
+					</div>
+				</form>
     </div>
+
     <!-- /.navbar-collapse -->
 </div>
 <!-- /.container -->

@@ -5,10 +5,17 @@
 
         <!-- Jumbotron Header -->
         <header class="jumbotron hero-spacer">
-            <h1>A Warm Welcome!</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, ipsam, eligendi, in quo sunt possimus non incidunt odit vero aliquid similique quaerat nam nobis illo aspernatur vitae fugiat numquam repellat.</p>
-            <p><a class="btn btn-primary btn-large">Call to action!</a>
-            </p>
+            <?php
+
+              $query = query("SELECT * FROM categories WHERE cat_id=" .escape_string($_GET['id']) . "");
+              confirm($query);
+              while ($row = fetch_array($query)) {
+$category = <<<DELIMETER
+<h2>{$row['cat_title']}</h2>
+
+DELIMETER;
+echo $category;}
+              ?>
         </header>
 
         <hr>
@@ -16,7 +23,7 @@
         <!-- Title -->
         <div class="row">
             <div class="col-lg-12">
-                <h3>Latest Features</h3>
+                <h3>Products</h3>
             </div>
         </div>
         <!-- /.row -->
