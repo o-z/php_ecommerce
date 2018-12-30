@@ -24,7 +24,18 @@
             <div class="row">
                 <div class="col-lg-12">
                     <form name="sentMessage" id="contactForm" method="post">
-                      <?php send_message(); ?>
+                      <?php if (send_message()=="SENT") {
+$message = <<<DELIMETER
+<h4 class="text-center bg-success"> SENT</h4>
+DELIMETER;
+                      echo $message;
+                    }else if (send_message()=="ERROR!") {
+$message = <<<DELIMETER
+<h4 class="text-center bg-danger"> ERROR!</h4>
+DELIMETER;
+                      echo $message;
+                    }
+                     ?>
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">

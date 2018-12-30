@@ -178,11 +178,12 @@ function  send_message(){
     $headers   = "From:{$from_name} Ip address: {$ip_adress}";
     $result = mail($to ,$subject,"Message:{$message} Email: {$email}",$headers );
     if (!$result) {
-      echo "ERROR!";
+      return "ERROR!";
 
 
     }else {
-      echo "SENT";
+      return "SENT";
+
 
     }
 }
