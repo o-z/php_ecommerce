@@ -57,7 +57,7 @@
 </tbody>
 
 </table>
-
+<a  class="btn btn-success btn-lg btn-block" href="pay.php?add=<?php echo isset($_SESSION['item_total']) ? $_SESSION['item_total']:$_SESSION['item_total']="0"; ?> "role="button">Pay</a>
 </div><!-- CART TOTALS-->
 
 
