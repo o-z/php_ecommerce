@@ -85,9 +85,17 @@ echo $category_links;
 
 }
 
-function get_products_in_cat_page(){
+function get_products_in_cat_page($girdi){
+if ($girdi==0) {
+  $query= query(" SELECT * FROM products WHERE product_category_id= " .escape_string($_GET['id']) . " ORDER BY product_price DESC");
+}elseif ($girdi==1) {
+  $query= query(" SELECT * FROM products WHERE product_category_id= " .escape_string($_GET['id']) . " ORDER BY product_price ASC");
+}else {
+  $query= query(" SELECT * FROM products WHERE product_category_id= " .escape_string($_GET['id']) . " ");
+}
 
-$query= query(" SELECT * FROM products WHERE product_category_id= " .escape_string($_GET['id']) . "");
+
+
 confirm($query);
 
 while ($row = fetch_array($query)) {

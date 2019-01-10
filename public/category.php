@@ -18,6 +18,11 @@ echo $category;}
               ?>
         </header>
 
+        <form name="Table Properties" method="post" >
+
+          <button type="submit" name="sort_week" class="button" value="0"> Fiyat Azalan </button>
+          <button type="submit" name="sort_week" class="button" value="1"> Fiyat Artan </button>
+        </form>
         <hr>
 
         <!-- Title -->
@@ -31,7 +36,19 @@ echo $category;}
         <!-- Page Features -->
         <div class="row text-center">
 
-            <?php get_products_in_cat_page(); ?>
+            <?php
+            if (isset($_POST['sort_week'])) {
+              if($_POST['sort_week'] == "0") {
+                 get_products_in_cat_page(0);
+               }else if ($_POST['sort_week'] == "1") {
+                 get_products_in_cat_page(1);
+               }
+            }else {
+              get_products_in_cat_page(3);
+            }
+
+
+              ?>
 
 
 
